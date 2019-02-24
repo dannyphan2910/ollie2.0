@@ -1,0 +1,168 @@
+﻿WordList: (Calculator, Calendar, Search, Weather, and others)
+__________________________________________
+
+
+Calculator :
+
+
+1. Sum
+2. Add
+3. Plus
+4. Total
+5. Subtract
+6. Calculate
+7. Equal
+8. Math
+9. /
+10. *
+11. Decrease
+12. Deduct
+13. Multiply
+14. Product
+15. Calculator
+16. Division
+17. Divide
+18. Greatest Common Denominator
+19. GCD
+20. LCD
+21. Lowest Common Denominator
+22. The average of
+23. Mean
+24. Power
+25. Exponent
+26. Calculation
+27. Raised to
+28. +
+29. -
+
+
+___________________________________________
+
+
+Calendar :
+
+
+1. Date
+2. Day
+3. Decade
+4. Annual
+5. Age
+6. 2018
+7. Minute
+8. Second
+9. Year
+10. Time
+11. Month
+12. Calendar
+13. Schedule
+14. Daytime
+15. Night Time
+16. Afternoon
+17. Monday
+18. Tuesday
+19. Wednesday
+20. Thursday
+21. Friday
+22. Saturday
+23. Sunday
+
+
+___________________________________________
+
+
+Weather :
+
+
+1. Climate
+2. Temperature
+3. Celcius
+4. Farenheit
+5. Rainy
+6. Rain
+7. Clouds
+8. Cloudy
+9. Sun
+10. Sunny
+11. Umbrella
+12. Sunblock
+13. Wind
+14. Weather
+15. Precipitation
+16. Pressure
+17. Fog
+18. Foggy
+19. Snow
+20. Wind 
+21. Windy
+22. Humidity
+23. Humid
+24. Conditions
+25. Rainfall
+26. Blizzard
+27. Atmosphere
+28. Winter
+29. Summer
+30. Fall
+
+
+
+___________________________________________
+
+
+How are you questions
+
+
+1. How are you
+2. How are you doing
+3. Are you well
+
+___________________________________________
+
+
+Hello 
+
+
+1. Hello
+2. Hey
+3. Greetings
+4. What’s up
+5. Sup
+6. Bonjour
+7. Hola
+8. Namaste
+9. How do you do
+10. Nice to meet you
+
+___________________________________________
+
+
+Jokes questions
+
+
+1. Tell me a joke
+2. Say a joke
+3. What's a good joke
+
+___________________________________________
+
+
+Where are you from questions
+
+
+1. Where are you from
+2. Where were you born
+3. Where did you grow up
+4. Where do you live
+5. Where is your home
+6. Where do you come from
+7. Do you have a house
+
+___________________________________________
+
+
+Re-informating functionality
+
+
+1. What do you do
+2. What can you do
+3. What are your functions
