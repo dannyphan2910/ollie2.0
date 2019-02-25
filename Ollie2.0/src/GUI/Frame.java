@@ -21,7 +21,7 @@ public class Frame {
 	private JButton button;
 	private JScrollPane scrollPane;
 	private JTextArea display;
-	
+
 	private JButton calendar;
 	private JButton browser;
 	private JButton weather;
@@ -62,7 +62,7 @@ public class Frame {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		frame.setResizable(false);
-		
+
 		textArea = new JTextArea();
 		textArea.setWrapStyleWord(true);
 		textArea.setLineWrap(true);
@@ -72,6 +72,8 @@ public class Frame {
 		button = new JButton("Press Me");
 		button.setBounds(110, 597, 117, 29);
 		frame.getContentPane().add(button);
+		
+		frame.getRootPane().setDefaultButton(button);
 
 		scrollPane = new JScrollPane();
 		scrollPane.setBounds(10, 60, 325, 400);
@@ -82,7 +84,7 @@ public class Frame {
 		display.setWrapStyleWord(true);
 		scrollPane.setViewportView(display);
 		display.setEditable(false);
-		
+
 		makeButtons();
 
 		button.addActionListener(new ActionListener() {
@@ -91,62 +93,83 @@ public class Frame {
 					String text = textArea.getText();
 					displayText(text);
 					operation(text);
-				
+
 				} catch (Exception ex) {
 					display.append("Ollie does not understand." + NEW_LINE);
 				}
-					
+
 			}
 		});
 
 	}
-	
+
 	private void makeButtons() {
 		calendar = new JButton("");
 		calendar.setFont(new Font("Lucida Grande", Font.PLAIN, 8));
 		calendar.setBounds(10, 6, 50, 50);
 		frame.getContentPane().add(calendar);
 		calendarButton();
-		
-		Image calendarIcon = new ImageIcon(this.getClass().getResource("/calendarICON.png")).getImage().getScaledInstance(30, 30, java.awt.Image.SCALE_SMOOTH);
+
+		Image calendarIcon = new ImageIcon(this.getClass().getResource("/calendarICON.png")).getImage()
+				.getScaledInstance(30, 30, java.awt.Image.SCALE_SMOOTH);
 		calendar.setIcon(new ImageIcon(calendarIcon));
-		
+
 		browser = new JButton("");
 		browser.setFont(new Font("Lucida Grande", Font.PLAIN, 8));
 		browser.setBounds(285, 6, 50, 50);
 		frame.getContentPane().add(browser);
-		
-		Image browserIcon = new ImageIcon(this.getClass().getResource("/browserICON.png")).getImage().getScaledInstance(30, 30, java.awt.Image.SCALE_SMOOTH);
+		browserButton();
+
+		Image browserIcon = new ImageIcon(this.getClass().getResource("/browserICON.png")).getImage()
+				.getScaledInstance(30, 30, java.awt.Image.SCALE_SMOOTH);
 		browser.setIcon(new ImageIcon(browserIcon));
-		
+
 		weather = new JButton("");
 		weather.setFont(new Font("Lucida Grande", Font.PLAIN, 8));
 		weather.setBounds(95, 6, 50, 50);
 		frame.getContentPane().add(weather);
 		weatherButton();
-		
-		Image weatherIcon = new ImageIcon(this.getClass().getResource("/weatherICON.png")).getImage().getScaledInstance(30, 30, java.awt.Image.SCALE_SMOOTH);
+
+		Image weatherIcon = new ImageIcon(this.getClass().getResource("/weatherICON.png")).getImage()
+				.getScaledInstance(30, 30, java.awt.Image.SCALE_SMOOTH);
 		weather.setIcon(new ImageIcon(weatherIcon));
-		
+
 		calculator = new JButton("");
 		calculator.setFont(new Font("Lucida Grande", Font.PLAIN, 8));
 		calculator.setBounds(190, 6, 50, 50);
 		frame.getContentPane().add(calculator);
 		calculatorButton();
-		
-		Image calculatorIcon = new ImageIcon(this.getClass().getResource("/calculatorICON.png")).getImage().getScaledInstance(30, 30, java.awt.Image.SCALE_SMOOTH);
+
+		Image calculatorIcon = new ImageIcon(this.getClass().getResource("/calculatorICON.png")).getImage()
+				.getScaledInstance(30, 30, java.awt.Image.SCALE_SMOOTH);
 		calculator.setIcon(new ImageIcon(calculatorIcon));
 	}
-	
+
 	private void calendarButton() {
 		calendar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				display.append("Generating calendar application..." + NEW_LINE);
-				new FrameCalendar().setVisible(true);	
+				new FrameCalendar().setVisible(true);
 			}
 		});
 	}
-	
+
+	private void browserButton() {
+		browser.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				display.append("Generating your browser application..." + NEW_LINE);
+				display.append("Suggested websites: " + NEW_LINE
+								+ "https://www.google.com/" + NEW_LINE
+								+ "https://www.facebook.com/" + NEW_LINE
+								+ "https://www.amazon.com/" + NEW_LINE
+								+ "https://www.twitter.com/" + NEW_LINE
+								+ "https://www.github.com/dannyphan2910/" + NEW_LINE);
+				
+				new FrameBrowser().setVisible(true);
+			}
+		});
+	}
+
 	private void weatherButton() {
 		weather.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -155,7 +178,7 @@ public class Frame {
 			}
 		});
 	}
-	
+
 	private void calculatorButton() {
 		calculator.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -172,7 +195,7 @@ public class Frame {
 
 	public void operation(String text) {
 		ArrayList<String> getResult = main.MainCall.main(text);
-		
+
 		if (getResult.get(0).equals("INVOKE WEATHER FUNCTION")) {
 			display.append("Generating weather application..." + NEW_LINE);
 			new FrameWeather().setVisible(true);
@@ -185,19 +208,19 @@ public class Frame {
 		} else {
 			String[] toDisplay = list2StringArr(getResult);
 
-			for (String thisLine: toDisplay) {
+			for (String thisLine : toDisplay) {
 				display.append(thisLine + NEW_LINE);
 			}
 		}
 	}
-	
+
 	public String[] list2StringArr(ArrayList<String> arr) {
-		 // Convert ArrayList to object array 
-        Object[] objArr = arr.toArray(); 
-  
-        // convert Object array to String array 
-        String[] str = Arrays.copyOf(objArr, objArr.length, String[].class); 
-  
-        return str; 
+		// Convert ArrayList to object array
+		Object[] objArr = arr.toArray();
+
+		// convert Object array to String array
+		String[] str = Arrays.copyOf(objArr, objArr.length, String[].class);
+
+		return str;
 	}
 }
