@@ -157,7 +157,7 @@ public class Frame {
 	private void browserButton() {
 		browser.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				display.append("Generating your browser application..." + NEW_LINE);
+				display.append("Generating your browser application..." + NEW_LINE + NEW_LINE);
 				display.append("Suggested websites: " + NEW_LINE
 								+ "https://www.google.com/" + NEW_LINE
 								+ "https://www.facebook.com/" + NEW_LINE

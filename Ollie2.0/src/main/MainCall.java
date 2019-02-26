@@ -37,8 +37,8 @@ public class MainCall {
 		} else if (checkInput(jokesWords, input)) {
 			output = jokeGenerator();
 		} else if (checkInput(functionInfoWords, input)) {
-			//TODO: FINISH WRITING THIS
-			output.add("");
+			output.add("I have 4 primary functions. Can you guess what they are?");
+			output.add("Hint: Right above me there are 4 buttons for you to try!");
 		} else if (checkInput(weatherWords, input)) {
 			//TODO: Think of a better way!
 			output.add("INVOKE WEATHER FUNCTION");
@@ -51,6 +51,7 @@ public class MainCall {
 			output.addAll(search.SearchFunction.search(input));
 		}
 		
+		output.add("\n");
 		return output;
 	}
 
