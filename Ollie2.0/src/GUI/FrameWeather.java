@@ -69,6 +69,8 @@ public class FrameWeather extends JFrame {
 		submit.setBounds(377, 92, 117, 29);
 		contentPane.add(submit);
 		
+		getRootPane().setDefaultButton(submit);
+		
 		submit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
