@@ -72,6 +72,7 @@ public class FrameWeather extends JFrame {
 		submit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
+					textArea.setText("");
 					String city = textField.getText().toLowerCase().trim();
 					getWeather(city);
 				} catch (Exception ex) {
